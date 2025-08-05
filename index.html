@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Generator</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+      *{
+      padding: 0%;
+      margin: 0;
+    }
+    .parent-container{
+      width: 100%;
+      height: 80px;
+      background-image: linear-gradient(to right, teal, rgb(197, 192, 192));
+    }
+    .parent{
+       font-family: "Oswald", sans-serif;
+      display: flex;
+      gap: 100px;
+      color: black;
+    }
+  .child{
+    display: flex;
+    align-items: center;
+    width: 30%;
+  }
+  .child img{
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  .parent ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  .parent ul li{
+    list-style: none;
+  }
+  .parent ul li a{
+    text-decoration: none;
+    color: black;
+  }
+  .parent ul li a:hover{
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 1px 2px 2px;
+    transition: 100ms;
+    transform: scale(1.1);
+  }
+  .sec2{
+  padding: 10px;
+    height: 100vh;
+     background-image: url(quote1.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+   
+  }
+  .sec2 .box1{
+    font-family: "Oswald", sans-serif;
+    color: black;
+    height: 100vh;
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  button{
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  .headerLine{
+    font-family: "Oswald", sans-serif;
+    width: 50%;
+    height: 100px;
+    flex-direction: column;
+    background: transparent;
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: space-around;
+    border: 1px solid;
+    padding: 30px;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px;
+  }
+  .headerLine .author{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: flex-end;
+    align-content: flex-end;
+  }
+  .headerLine .name{
+    margin: 30px;
+    
+
+  }
+  .About{
+      font-family: "Oswald", sans-serif;
+    height: 75vh;
+    background-color: black;
+    color: white;
+  }
+  .About header{
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+  }
+  .About .children{
+    margin: 20px auto;
+    max-width: 600px;
+    text-align: center;
+  }
+  .About .children .policy{
+    margin: 20px auto;
+    max-width: 700px;
+    text-align: center;
+    padding: 10px;
+  }
+  .About .children.terms{
+    margin: 20px auto;
+    max-width: 700px;
+    text-align: center;
+    padding: 10px;
+  }
+  .About h2{
+    margin-top: 20px;
+  }
+.sec3{
+   font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      margin: 0;
+      padding: 0;
+}
+   .contact-section {
+      background: #fff;
+      padding: 60px 20px;
+      max-width: 800px;
+      margin: 40px auto;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+    .contact-section h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+    .contact-form button {
+      padding: 12px;
+      border: none;
+      background: #007BFF;
+      color: white;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .contact-form button:hover {
+      background: #0056b3;
+    }
+    .contact-info {
+      margin-top: 40px;
+      text-align: center;
+      color: #555;
+    }
+    .contact-info p {
+      margin: 5px 0;
+    }
+  
+    </style>
+</head>
+<body>
+      <section class="parent-container" id="Quote">
+    <div class="parent">
+      <div class="child">
+          <img src="Untitled Project - .jpg" alt="">
+           <h3>Quote About Life</h3>
+      </div>
+    
+      <ul>
+        <li><a href="#Home">Home</a></li>
+        <li><a href="#About">About</a></li>
+        <li><a href="#Contact Me">Contact Me</a></li>
+      </ul>
+    </div>
+
+  
+
+
+   
+  </section>
+       <section class="sec2" id="Home">
+      <div class="box1">
+         <h3>"Quote Of The Day"</h3>
+        <div class="headerLine">
+         
+        <div id="userAPI"></div>
+        <div class="author">
+        <div id="author" class="name"></div>
+        </div>
+        </div>
+        <button id="generateButton">Generate Quote</button>
+      </div>
+    </section>
+
+   <section  class="About" id="About">
+    <header>
+      <h2>About</h2>
+    </header>
+    <div class="children">
+       <p class="about">
+    This Random Quote Generator is a simple web application that displays a new inspirational quote each time you click the button.
+    It's designed to motivate and inspire you with a wide range of famous quotes. Built with HTML, CSS, and JavaScript, it's a lightweight project perfect for beginners learning to code.
+  </p>
+  <h2>Privacy Policy</h2>
+  <p class="policy">
+    
+    This app does not collect, store, or share any personal data. All quotes are stored locally within the code and no data is sent or received from a server.
+    We respect your privacy and do not use cookies or tracking tools.
+  </p>
+   <h2>Terms of Use</h2>
+  <p class="Terms">
+    This application is provided "as-is" for educational and entertainment purposes. You are free to use, share, and modify the code for your own projects.
+    However, we are not responsible for any issues or losses caused by the use of this tool.
+  </p>
+    </div>
+
+  </section>
+  <section class="sec3" id="Contact Me">
+      <div class="contact-section">
+    <h2>Contact Us</h2>
+    <form class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit" onclick="thanks()">Send Message</button>
+    </form>
+    
+    <div class="contact-info">
+      <p>Email: auwalahmadu52@gmail.com</p>
+      <p>Phone: +234 8107534341</p>
+      <p>Address: 234 Keffi, Nasarawa, Nigeria</p>
+    </div>
+  </div>
+  </section>
+
+
+  
+    <script>
+   
+      let quote = document.getElementById('userAPI')
+      let author = document.getElementById('author')
+let button = document.getElementById('generateButton')
+button.addEventListener('click', generateButton)
+
+function generateButton(){
+  fetch('https://api.quotable.io/random?tags=&author=')
+ // fetch("https://api.kanye.rest")
+  .then(res => res.json())
+  .then(data => {
+   // console.log(data);
+   quote.innerHTML = data.content
+   author.innerHTML = data.author 
+//document.getElementById('userAPI').innerHTML = JSON.stringify(data)
+  })
+}
+  function thanks(){
+     alert(`thanks for your message`)
+      }
+    </script>
+</body>
+</html>
